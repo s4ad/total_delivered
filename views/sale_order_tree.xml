@@ -1,0 +1,12 @@
+<odoo>
+    <record id="view_sale_order_tree_total_delivered" model="ir.ui.view">
+        <field name="name">sale.order.total_delivered_tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_total']" position="after">
+             <field string="Total Livré" name="total_delivered_amount"  on_change="1" optional="show" sum="Total Livré" widget="monetary" decoration-bf="1" decoration-info="total_delivered_amount > 0"></field>
+            </xpath>
+        </field>
+    </record>
+</odoo>

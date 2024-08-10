@@ -1,1 +1,13 @@
-
+<odoo>
+    <record id="view_sale_order_form_total_inherited" model="ir.ui.view">
+        <field name="name">sale.order.form.total</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tax_totals']" position="after">
+                <label for="total_delivered_amount" class="oe_inline" string="Total Livré"/>
+                <field name="total_delivered_amount" nolabel="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
